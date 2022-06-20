@@ -8,7 +8,7 @@ import time
 
 from pathlib import Path
 
-template_file = Path(__file__) / 'sbatch_template.sh'
+template_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "sbatch_template.sh")
 
 JOB_NAME = "{{JOB_NAME}}"
 NUM_NODES = "{{NUM_NODES}}"
