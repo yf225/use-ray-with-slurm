@@ -35,11 +35,11 @@ if __name__ == '__main__':
         help="The specified nodes to use. Same format as the return of 'sinfo'. Default: ''."
     )
     parser.add_argument(
-        "--num-gpus", type=int, default=0,
+        "--num-gpus", type=int, default=8,
         help="Number of GPUs to use in each node. (Default: 0)"
     )
     parser.add_argument(
-        "--partition", "-p", type=str, default="chpc",
+        "--partition", "-p", type=str, default="dev",
     )
     parser.add_argument(
         "--load-env", type=str, default="",
