@@ -39,7 +39,7 @@ if __name__ == '__main__':
         help="Number of GPUs to use in each node. (Default: 0)"
     )
     parser.add_argument(
-        "--partition", "-p", type=str, default="dev",
+        "--partition", "-p", type=str, default="scavenge",
     )
     parser.add_argument(
         "--load-env", type=str, default="",
@@ -90,7 +90,6 @@ if __name__ == '__main__':
     print("Start to submit job!")
     subprocess.Popen(["sbatch", script_file])
     print(
-        "Job submitted! Script file is at: <{}>. Log file is at: <{}>".format(
-            script_file, "{}.log".format(job_name))
+        f"Job submitted! Script file is at:\n\n{script_file}\n\nLog file is at:\n\n{job_name}.log\n\nTrack the log with e.g.:\n\ntail -f {job_name}.log"
     )
     sys.exit(0)
